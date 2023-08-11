@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://docusaurus-wiki-three.vercel.app/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -62,14 +62,20 @@ const config = {
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
-          href: '/intro'
+          href: '/fullstack/intro'
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Docs',
+            label: 'Fullstack',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'frontendSidebar',
+            label: 'Frontend',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           // {
@@ -105,7 +111,7 @@ const config = {
             ],
           },
         ],
-        // copyright: `Copyright © ${new Date().getFullYear()} My Fullstack Wiki, Inc. Built with Docusaurus.`,
+        // copyright: `Copyright © ${n Date().getFullYear()} My Fullstack Wiki, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
