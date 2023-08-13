@@ -1,2 +1,2 @@
-# react-extensions
+# React Extensions
 

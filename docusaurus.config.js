@@ -51,7 +51,19 @@ const config = {
       }),
     ],
   ],
-
+  themes: [
+    [
+      "@easyops-cn/docusaurus-search-local",
+      {
+        hashed: true,
+        language: ["en", "zh"],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        indexBlog: false,
+        // docsRouteBasePath: "/"
+      }
+    ]
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({

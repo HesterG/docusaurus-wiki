@@ -1,6 +1,6 @@
 
 
-# mongoose + mongoDB Cloud + graphql&#x20;
+# mongoose + mongoDB Cloud + graphql
 
 学习graphql的过程中发现用mongoDB Cloud真是省事啊，不用本地装mongodb了
 
