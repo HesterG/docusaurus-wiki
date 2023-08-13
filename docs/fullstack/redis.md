@@ -2,7 +2,7 @@
 title: Redis
 ---
 
-# 什么是Redis
+## 什么是Redis
 
 Redis 是完全开源的，遵守 BSD 协议，是一个高性能的 key-value 数据库。
 
@@ -19,11 +19,11 @@ Redis 优势
 - 原子 – Redis的所有操作都是原子性的，意思就是要么成功执行要么失败完全不执行。单个操作是原子性的。多个操作也支持事务，即原子性，通过MULTI和EXEC指令包起来。
 - 丰富的特性 – Redis还支持 publish/subscribe, 通知, key 过期等等特性。
 
-# Redis 为什么这么快
+## Redis 为什么这么快
 
 [zhihu](https://zhuanlan.zhihu.com/p/460236324)
 
-# Redis vs MySQL
+## Redis vs MySQL
 
 使用场景区别 
 

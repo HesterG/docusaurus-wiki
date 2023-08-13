@@ -1,8 +1,7 @@
 ---
 title: AWS
 ---
-
-# EC2
+## EC2
 
 [EC2 User Guides](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/concepts.html)
 
