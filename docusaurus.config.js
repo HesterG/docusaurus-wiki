@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Fullstack Wiki',
-  tagline: 'Dinosaurs are cool',
+  title: 'My Wiki',
+  tagline: 'My personal tech wiki',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
