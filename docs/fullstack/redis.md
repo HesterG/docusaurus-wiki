@@ -1,5 +1,5 @@
 ---
-title: redis
+title: Redis
 ---
 
 # 什么是Redis

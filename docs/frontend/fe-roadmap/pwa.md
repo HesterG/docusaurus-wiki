@@ -2,8 +2,7 @@
 
 ## PWA应用实践
 
-{% embed url="https://lavas-project.github.io/pwa-book/" %}
-
+[PWA 应用实战](https://lavas-project.github.io/pwa-book/)
 
 
 ## Service Worker

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: intro
+title: Intro
 ---
 
 # FullStack Wiki

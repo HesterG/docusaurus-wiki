@@ -1,4 +1,4 @@
-# ts notes
+# TS Notes
 
 ## 第一章 快速入门
 

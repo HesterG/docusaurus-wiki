@@ -1,5 +1,5 @@
 ---
-title: nginx
+title: Nginx
 ---
 
 # 负载均衡

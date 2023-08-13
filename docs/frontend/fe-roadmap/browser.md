@@ -29,13 +29,9 @@ Opera
 
 * 内核：最初是自己的Presto内核，后来是Webkit，现在是Blink内核
 
-
-
 ## 浏览器原理
 
-{% embed url="https://hestergong.gitbook.io/my-wiki/liu-lan-qi-yuan-li" %}
-
-
+[笔记](https://docusaurus-wiki-three.vercel.app/frontend/browser-principle)
 
 ## 浏览器数据库
 

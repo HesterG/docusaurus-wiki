@@ -2,9 +2,7 @@
 
 ## 笔记
 
-{% embed url="https://hestergong.gitbook.io/my-wiki/ts-notes" %}
-
-
+[ts notes](https://docusaurus-wiki-three.vercel.app/frontend/ts-notes)
 
 ## 类型
 

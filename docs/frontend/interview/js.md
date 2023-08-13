@@ -193,7 +193,7 @@ Foo.a();
 
 ## prototype
 
-{% embed url="https://github.com/HesterG/js-advanced-study/blob/main/01-prototype/index.js" %}
+[code  sample](https://github.com/HesterG/js-advanced-study/blob/main/01-prototype/index.js)
 
 ![img](https://pic1.zhimg.com/80/e83bca5f1d1e6bf359d1f75727968c11\_720w.webp?source=1940ef5c)
 

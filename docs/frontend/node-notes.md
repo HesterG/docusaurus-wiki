@@ -1,3 +1,3 @@
 # NodeJS
 
-[old wiki](https://hestergong.gitbook.io/my-wiki/node-notes)
+[old wiki](https://docusaurus-wiki-three.vercel.app/frontend/node-notes)

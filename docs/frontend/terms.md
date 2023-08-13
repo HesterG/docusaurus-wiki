@@ -1,9 +1,9 @@
+# Terms
+
 |  中文 	|   英文	|  缩写 	|
 |---	|---	|---	|
 |  高阶组件 	|   HOC Higher order Component	|   HOC	|
 |   解构赋值	|   Destructuring Assignment	|   	|
-
-
 
 * **polyfill** is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers that do not natively support it.
 
