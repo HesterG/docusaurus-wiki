@@ -1,4 +1,4 @@
-# browser
+# Browser
 
 ## 浏览器缓存过程
 

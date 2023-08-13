@@ -1,4 +1,4 @@
-# vue-03
+# Vue 03
 
 ## computed vs watcher
 

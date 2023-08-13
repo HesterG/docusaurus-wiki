@@ -1,4 +1,4 @@
-# vue-02
+# Vue 02
 
 [vue面试中经常问到的问题](https://zhuanlan.zhihu.com/p/111310865)
 
