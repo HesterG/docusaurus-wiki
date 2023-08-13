@@ -1,3 +1,3 @@
 # 计算机网络
 
-{% embed url="https://hestergong.gitbook.io/my-wiki/ji-suan-ji-wang-luo" %}
+[network](https://docusaurus-wiki-three.vercel.app/frontend/network/)
