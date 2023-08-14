@@ -47,6 +47,26 @@ title: Nginx
 
 自签名就是自己签名，不用CA签名，非常非常少用
 
+### 实操
+
+- [购买域名](https://www.bilibili.com/video/BV1yS4y1N76R?p=43) 、[购买vps](https://www.bilibili.com/video/BV1yS4y1N76R?p=44)
+
+- [安装软件](https://www.bilibili.com/video/BV1yS4y1N76R?p=46)
+
+  可以安装类似于[lnmp](https://github.com/oneinstack/lnmp)
+
+  Linux + Nginx+ MySQL/MongoDB+ PHP
+
+  [安装lnmp](https://oneinstack.com/)
+
+- [配置域名](https://www.bilibili.com/video/BV1yS4y1N76R?p=48)
+
+  添加A记录，指向主机的ip
+
+- [申请证书](https://www.bilibili.com/video/BV1yS4y1N76R?p=49)
+
+- [配置证书](https://www.bilibili.com/video/BV1yS4y1N76R?p=50)
+
 
 ## 课件
 
