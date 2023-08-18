@@ -1,0 +1,5 @@
+git add *
+msg=$([ -z "$1" ] && echo "update" || echo "$1")
+git commit -m "$msg"
+git push
+clear
