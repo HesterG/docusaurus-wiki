@@ -1,6 +1,7 @@
 ---
 title: AWS
 ---
+
 ## EC2
 
 ### User Guides
@@ -14,6 +15,10 @@ Amazon Elastic Compute Cloud（Amazon EC2）在 Amazon Web Services（AWS）云�
 
 [Setting up an EC2 Instance Deploy Node app on AWS EC2 Amazon Linux 2](https://www.youtube.com/watch?v=oHAQ3TzUTro)
 
+### EC2 Essentials
+
+[EC2 Essentials](https://cloudcasts.io/course/ec2-essentials)
+
 ## VPC
 
 ### Official Doc
@@ -25,6 +30,8 @@ Amazon Elastic Compute Cloud（Amazon EC2）在 Amazon Web Services（AWS）云�
 ### AWS VPC & Subnets For Beginners
 
 [AWS VPC & Subnets For Beginners](https://www.youtube.com/watch?v=TUTqYEZZUdc)
+
+[Other Reference: Nginx reverse proxy](https://www.youtube.com/watch?v=_EBARqreeao)
 
 Summarized by Monica and ChatGPT:
 
@@ -60,7 +67,49 @@ The author's objective is to establish a secure AWS environment using Virtual Pr
 
 In conclusion, the author meticulously configures a VPC environment on AWS, creating public and private subnets, deploying instances, and implementing a reverse proxy setup to facilitate secure communication between the public internet and a private Node.js application. The result is a controlled and secure infrastructure that allows external access while maintaining robust security measures.
 
-[reference: Nginx reverse proxy](https://www.youtube.com/watch?v=_EBARqreeao)
+
+### Up and Running with AWS VPC
+
+[Up and Running with AWS VPC](https://cs.fyi/guide/up-and-running-with-aws-vpc)
+
+#### CIDR
+
+Default CIDR block for this default VPC. This CIDR block defines the range of IP addresses that can be assigned to the instances in the VPC. You can define the CIDR block for a VPC when you create it.:
+
+```
+172.31.0.0/16
+```
+
+#### Route tables 
+
+Route tables tell the AWS and VPC **how to route** the traffic depending on the source and destination. A route table contains a set of rules, called routes, that are used to determine where **network traffic** from your **subnet** is directed. Each subnet in your VPC must be associated with a route table.
+
+### Up and Running with AWS EC2
+
+[Up and Running with AWS EC2](https://cs.fyi/guide/up-and-running-with-aws-ec2)
+
+#### EC2 Instance Types
+
+AWS has a pretty [well documented listing of the different EC2 instance types](https://aws.amazon.com/ec2/instance-types/). This section is just a brief high level overview of the different types. There are 5 different types of EC2 instances:
+
+- General Purpose (T and M): These are the most commonly used EC2 instances. They are good for most use cases and are a good starting point. They are also the cheapest EC2 instances. `t2` and `t3` are the General Purpose server types and are the most commonly used; t2 is the older generation and t3 is the newer generation.
+
+- Compute Optimized (C Types): when you require lot of CPU power.
+
+- Memory Optimized (R Types): when you require a lot of memory.
+
+- Accelerated Computing (P, Inf, G, F, VT types): when you require a lot of GPU power.
+
+- Storage Optimized: when you require a lot of storage.
+
+### VPC Basics Tutorial
+
+[VPC Basics](https://cloudcasts.io/course/vpc-basics/what-is-a-vpc)
 
 ## S3
 
+## More resources
+
+### Sam Meech-Ward’s AWS Videos
+
+[Sam Meech-Ward’s AWS Videos](https://www.youtube.com/playlist?list=PL0X6fGhFFNTcU-_MCPe9dkH6sqmgfhy_M)

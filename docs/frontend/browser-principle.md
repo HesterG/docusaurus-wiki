@@ -476,8 +476,10 @@ At the end of the standardization, the previous CSS values are changed to the fo
 
 ### [图解Google V8](https://time.geekbang.org/column/intro/100048001?tab=catalog)
 
-#### [笔记一](tu-jie-googlev8/bi-ji-1.md)
+#### [笔记一](/frontend/tu-jie-googlev8/notes01)
 
-#### [笔记二](tu-jie-googlev8/bi-ji-2.md)
+#### [笔记二](/frontend/tu-jie-googlev8/notes02)
+
+#### [笔记二](/frontend/tu-jie-googlev8/notes03)
 
 ### [JavaScriptCore 中的推测](https://webkit.org/blog/10308/speculation-in-javascriptcore/)

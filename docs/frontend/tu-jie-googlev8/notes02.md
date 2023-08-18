@@ -7,7 +7,7 @@
 ## [运行时环境：运行JavaScript代码的基石](https://time.geekbang.org/column/article/219066)
 
 * 当你想执行一段 JavaScript 代码时，只需要将代码丢给 V8 虚拟机，V8 便会执行并返回给你结果。
-*   其实在执行 JavaScript 代码之前，V8 就已经**准备好了代码的运行时环境**，这个环境包括了\*\*堆空间和栈空间、全局执行上下文、全局作用域、内置的内建函数、宿主环境提供的扩展函数和对象，还有消息循环系统。\*\*准备好运行时环境之后，V8 才可以执行 JavaScript 代码，这包括解析源码、生成字节码、解释执行或者编译执行这一系列操作。
+*   其实在执行 JavaScript 代码之前，V8 就已经**准备好了代码的运行时环境**，这个环境包括了**堆空间和栈空间、全局执行上下文、全局作用域、内置的内建函数、宿主环境提供的扩展函数和对象，还有消息循环系统。**准备好运行时环境之后，V8 才可以执行 JavaScript 代码，这包括解析源码、生成字节码、解释执行或者编译执行这一系列操作。
 
     <img src="https://static001.geekbang.org/resource/image/a8/54/a89d747fb614a17e08b1a6b7dce62b54.jpg" alt="img" data-size="original" />
 
@@ -413,16 +413,13 @@ int main()
 *   了解了这一点，接下来我们就可以分析更加复杂一点的场景了：当一个函数调用另外一个函数时，栈的变化情况是怎样的？我们还是先看下面这段代码：
 
     ```c
-    int add(num1,num2){
+    int add(num1, num2) {
         int x = num1;
         int y = num2;
         int ret = x + y;
         return ret;
     }
-
-
-    int main()
-    {
+    int main() {
         int x = 5;
         int y = 6;
         x = 100;
@@ -479,21 +476,14 @@ int main()
         int x;
         int y;
     };
-
-
-    int main()
-    {
+    int main() {
         int x = 5;
         int y = 6;
         int *z = new int;
         *z = 20;
-
-
         Point p;
         p.x = 100;
         p.y = 200;
-
-
         Point *pp = new Point();
         pp->y = 400;
         pp->x = 500;
@@ -503,7 +493,7 @@ int main()
     }
     ```
 
-    观察上面这段代码，你可以看到代码中有 new int、new Point 这种语句，当执行这些语句时，表示要在堆中分配一块数据，然后返回指针，通常返回的指针会被保存到栈中，下面我们来看看当 main 函数快执行结束时，堆和栈的状态，具体内容你可以参看下图：
+    观察上面这段代码，你可以看到代码中有 `new int`、`new Point` 这种语句，当执行这些语句时，表示要在堆中分配一块数据，然后返回指针，通常返回的指针会被保存到栈中，下面我们来看看当 main 函数快执行结束时，堆和栈的状态，具体内容你可以参看下图：
 
     <img src="https://static001.geekbang.org/resource/image/13/55/139edffd0fb7e2b58f0e03c7d1240755.jpg" alt="img" data-size="original" />
 
