@@ -12,8 +12,6 @@ title: Basics
 - [For-each range loop](https://yourbasic.org/golang/for-loop/#for-each-range-loop)
 - [Exit a loop](https://yourbasic.org/golang/for-loop/#exit-a-loop)
 
-
-
 ## Range
 
 [Go by example](https://gobyexample.com/range)
@@ -41,8 +39,6 @@ title: Basics
 
 总结：panic 会导致栈被展开直到 defer 修饰的 recover () 被调用或者程序中止。
 
-
-
 ## Array and Slice
 
 [Go Array](https://www.w3schools.com/go/go_arrays.php)
@@ -64,8 +60,6 @@ title: Basics
 3. 如果旧的slice容量大于1024，则新slice容量取旧slice容量乘以1.25
 
 代码后面还会对newcap进行roundup，比如在64位平台，newcap是奇数的话就会+1
-
-
 
 ## Modules
 
