@@ -89,6 +89,12 @@ const config = {
             sidebarId: 'frontendSidebar',
             label: 'Frontend',
           },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'goSidebar',
+            label: 'Go',
+          },
           // {to: '/blog', label: 'Blog', position: 'left'},
           // {
           //   href: 'https://github.com/facebook/docusaurus',
