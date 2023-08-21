@@ -19,6 +19,100 @@ Amazon Elastic Compute Cloud（Amazon EC2）在 Amazon Web Services（AWS）云�
 
 [EC2 Essentials](https://cloudcasts.io/course/ec2-essentials)
 
+#### Instance Types
+
+AWS has a pretty [well documented listing of the different EC2 instance types](https://aws.amazon.com/ec2/instance-types/).
+Here are a the high-level instance types:
+
+- General Purpose (T and M types, the most popular, and cheapest)
+- Compute Optimized (CPUs - C types)
+- Memory Optimized (RAM - R types)
+- Accelerated (GPU and other - P, Inf, G, F, VT types)
+- Storage Optimized (NVMe, fast EBS - I, D, H types)
+- Naming Convention:
+
+There are also variations within instance types - they share the same naming conventions. For example, you may see a `t3` type and `t3a` variation.
+Here are the varations:
+
+- a - AMD CPUs - cheaper than Intel CPUs, and not necessarily slower. I geneally recommend these.
+- n - Increased networking performance
+- d - NVMe ephemeral disks available
+- g - Graviton2, ARM based CPUs. These are cheapest - I recommend them if you can use ARM
+- z - Xeon processors, ideal for single-threaded applications
+- b - Block storage (EBS) optimized
+
+#### T3 Instance
+
+[Amazon EC2 T3 Instances](https://aws.amazon.com/ec2/instance-types/t3/)
+
+T3 instances **accumulate CPU credits** when a workload is operating **below the baseline** threshold and **uses credits** when running **above the baseline threshold**. 
+
+#### Instance Config
+
+[Instance Configuration](https://cloudcasts.io/course/ec2-essentials/instance-configurations)
+
+Some of the options we cover:
+
+1. [Spot Instances](https://aws.amazon.com/ec2/spot/?cards.sort-by=item.additionalFields.startDateTime&cards.sort-order=asc) - Save money using Spot instances, if your applications and infrastructure are fault-tolerant.
+2. [Networks/VPC](https://cloudcasts.io/course/vpc-basics) - We cover this in the VPC Basics course
+3. [Placement Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html) - Determine how EC2 instances are created within AWS's physical infrastructure
+4. Domain join directory - Use [AWS Directory Services](https://aws.amazon.com/directoryservice/), essentially AWS's Active Directory
+5. [IAM Roles](https://aws.amazon.com/iam/) - We mention this but don't cover it much, we'll be covering that in other courses
+6. [CPU Options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html) - Often used if serving software whose licenses charge per CPU core or thread.
+7. Behaviors - there's a few general options here, mostly self-explanatory
+    - Monitoring in CloudWatch samples every 5 minutes by default, however "enabling monitoring" will sample every 1 minute
+    - [EC2 Tenancy](https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html)
+    - [Elastic Inference](https://aws.amazon.com/machine-learning/elastic-inference/)
+8. [Credit Specification](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-how-to.html)
+9. [File systems (NFS)](https://aws.amazon.com/efs/)
+10. [Enclave](https://aws.amazon.com/ec2/nitro/nitro-enclaves/)
+11. [EC2 metadata/userdata](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html)
+
+#### Select Disk Types
+
+GP2 and GP3. Here are some resources comparing GP2 vs GP3:
+
+- [EBS volume types](https://aws.amazon.com/ebs/volume-types/)
+- [Reduce Costs by Taking Advantage of Amazon’s gp3 EBS Volumes With Cloudability Rightsizing](https://cloudwiry.com/ebs-gp3-vs-gp2-pricing-comparison/)
+- [gp3 For AWS EBS Volumes: Why, When and How To Switch](https://cloudsoft.io/blog/gp3-for-aws-ebs-volumes-why-when-and-how-to-switch)
+
+#### Security Groups
+
+[Security Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) are essentially firewalls, but work in the network-layer in AWS. Unlike a firewall in a server (e.g. iptables), they are not configured within a specific resource.
+
+The **default** for Security Groups is to **disallow** all ingress (inbound) and egress (outbound) traffic.
+A Security Group defines what types of traffic is allowed in/out of the server.
+
+The video shows creating a Security Groups.
+Note that how we create a security group in this video implicitly sets an egress rule to allow all outbound traffic - that's not explicitly shown in the web console.
+
+#### SSH Key Pairs
+
+We discuss creating and using [SSK Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) in AWS so we can SSH into our instances.
+You can also security connect to a server in a private subnet [as outlined here](https://aws.amazon.com/blogs/security/securely-connect-to-linux-instances-running-in-a-private-amazon-vpc/).
+
+Essentially you use an SSH Agent and forward the authentication agent when SSH'ing into a public instance. It looks a bit like this:
+
+```bash
+# List keys in the agent
+ssh-add –L
+ 
+ssh-add -K ~/.ssh/your-private-key.pem
+ 
+# Get into the bastion host, use the -A flag
+# to forward the authentication agent
+ssh -A ubuntu@<ip-address>
+ 
+# From within the public-network server, ssh into a private
+# server, which works as our private ssh key was forwarded
+# into the ssh agent on the public network server
+ssh ubuntu@<private-network-ip>
+```
+
+### Up and Running with AWS EC2
+
+[Up and Running with AWS EC2](https://cs.fyi/guide/up-and-running-with-aws-ec2)
+
 ## VPC
 
 ### Official Doc
@@ -83,24 +177,6 @@ Default CIDR block for this default VPC. This CIDR block defines the range of IP
 #### Route tables 
 
 Route tables tell the AWS and VPC **how to route** the traffic depending on the source and destination. A route table contains a set of rules, called routes, that are used to determine where **network traffic** from your **subnet** is directed. Each subnet in your VPC must be associated with a route table.
-
-### Up and Running with AWS EC2
-
-[Up and Running with AWS EC2](https://cs.fyi/guide/up-and-running-with-aws-ec2)
-
-#### EC2 Instance Types
-
-AWS has a pretty [well documented listing of the different EC2 instance types](https://aws.amazon.com/ec2/instance-types/). This section is just a brief high level overview of the different types. There are 5 different types of EC2 instances:
-
-- General Purpose (T and M): These are the most commonly used EC2 instances. They are good for most use cases and are a good starting point. They are also the cheapest EC2 instances. `t2` and `t3` are the General Purpose server types and are the most commonly used; t2 is the older generation and t3 is the newer generation.
-
-- Compute Optimized (C Types): when you require lot of CPU power.
-
-- Memory Optimized (R Types): when you require a lot of memory.
-
-- Accelerated Computing (P, Inf, G, F, VT types): when you require a lot of GPU power.
-
-- Storage Optimized: when you require a lot of storage.
 
 ### VPC Basics Tutorial
 
