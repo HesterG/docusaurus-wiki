@@ -98,7 +98,7 @@ At the end of the standardization, the previous CSS values are changed to the fo
 
     Secondly, some CSS properties add content to the layout.
 
-    Take a pseudo-class, for example, _div::after {content: ‘I’m here’;}_ creates a content included in the layout tree though it is not existing in the DOM tree.
+    Take a pseudo-class, for example, `div::after {content: ‘I’m here’;}` creates a content included in the layout tree though it is not existing in the DOM tree.
 
 [2. 布局计算](https://blog.poetries.top/browser-working-principle/guide/part1/lesson05.html#\_2-%E5%B8%83%E5%B1%80%E8%AE%A1%E7%AE%97)(calculating the geometry information)
 

@@ -30,7 +30,7 @@
 
     进入ts文件所在目录
 
-    执行命令：tsc xxx.ts
+    执行命令：`tsc xxx.ts`
 
 ### 基本类型
 
@@ -76,10 +76,10 @@ TS拥有自动的类型判断机制
 | unknown |        \*        |     类型安全的any     |
 |   void  |   空值（undefined）  |  没有值（或undefined） |
 |  never  |        没有值       |      不能是任何值      |
-|  object |   {name:'孙悟空'}   |      任意的JS对象     |
+|  object |   `{name:'孙悟空'}`   |      任意的JS对象     |
 |  array  |     \[1,2,3]     |      任意JS数组      |
 |  tuple  |      \[4,5]      | 元素，TS新增类型，固定长度数组 |
-|   enum  |    enum{A, B}    |    枚举，TS中新增类型    |
+|   enum  |    `enum{A, B}`    |    枚举，TS中新增类型    |
 
 *   number
 
@@ -90,11 +90,13 @@ TS拥有自动的类型判断机制
     let octal: number = 0o744;
     let big: bigint = 100n;
     ```
+
 *   boolean
 
     ```typescript
     let isDone: boolean = false;
     ```
+
 *   string
 
     ```typescript
@@ -107,6 +109,7 @@ TS拥有自动的类型判断机制
 
     I'll be ${age + 1} years old next month.`;
     ```
+
 *   字面量
 
     也可以使用字面量去指定变量的类型，通过字面量可以确定变量的取值范围
@@ -115,6 +118,7 @@ TS拥有自动的类型判断机制
     let color: 'red' | 'blue' | 'black';
     let num: 1 | 2 | 3 | 4 | 5;
     ```
+
 *   any
 
     ```typescript
@@ -122,17 +126,20 @@ TS拥有自动的类型判断机制
     d = 'hello';
     d = true;
     ```
+
 *   unknown
 
     ```typescript
     let notSure: unknown = 4;
     notSure = 'hello';
     ```
+
 *   void
 
     ```typescript
     let unusable: void = undefined;
     ```
+
 *   never
 
     ```typescript
@@ -140,23 +147,27 @@ TS拥有自动的类型判断机制
       throw new Error(message);
     }
     ```
+
 *   object（没啥用）
 
     ```typescript
     let obj: object = {};
     ```
+
 *   array
 
     ```typescript
     let list: number[] = [1, 2, 3];
     let list: Array<number> = [1, 2, 3];
     ```
+
 *   tuple
 
     ```typescript
     let x: [string, number];
     x = ["hello", 10]; 
     ```
+
 *   enum
 
     ```typescript
@@ -181,6 +192,7 @@ TS拥有自动的类型判断机制
     }
     let c: Color = Color.Green;
     ```
+
 *   类型断言
 
     有些情况下，变量的类型对于我们来说是很明确，但是TS编译器却并不清楚，此时，可以通过类型断言来告诉编译器变量的类型，断言有两种形式：
@@ -457,7 +469,7 @@ tsconfig.json是一个JSON文件，添加配置文件后，只需只需 tsc 命�
     `clean-webpack-plugin` - webpack中的清除插件，每次构建都会先清除目录
 3.  根目录下创建`webpack`的配置文件`webpack.config.js`
 
-    ```javascript
+    ```js
     const path = require("path");
     const HtmlWebpackPlugin = require("html-webpack-plugin");
     const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -508,6 +520,7 @@ tsconfig.json是一个JSON文件，添加配置文件后，只需只需 tsc 命�
 
     }
     ```
+
 4.  根目录下创建tsconfig.json，配置可以根据自己需要
 
     ```json
@@ -532,6 +545,7 @@ tsconfig.json是一个JSON文件，添加配置文件后，只需只需 tsc 命�
       ...略...
     }
     ```
+
 6. 在src下创建ts文件，并在并命令行执行`npm run build`对代码进行编译，或者执行`npm start`来启动开发服务器
 
 ### Babel

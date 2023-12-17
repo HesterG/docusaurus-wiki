@@ -32,35 +32,21 @@ Web3.0的势头因为元宇宙似乎更猛了，掏出收藏已久的web3.0科�
 
 ### NFT的类型
 
-{% tabs %}
-{% tab title="undefined" %}
 \*\*1/1s（\*\*发音为"一对一"）是单一资产。1/1的例子是数字艺术和域名。像博物馆作品一样，人们在评估1/1艺术NFT时会考虑艺术的质量，艺术家的声誉以及其他收藏家的愿望。2021年3月，艺术家Beeple[在佳士得以6900万美元的价格出售了1/1的](https://www.theverge.com/2021/3/11/22325054/beeple-christies-nft-sale-cost-everydays-69-million)NFT。其他1/1 NFT艺术家包括Xcopy，Coldie，Hackatao和[动图（](https://foundation.app/@motionscape)他们[制作了NFT Odyssey）。](https://foundation.app/@motionscape/\~/114984)
-{% endtab %}
 
-{% tab title="undefined" %}
 **收藏品**是一组 NFT，每个都有独特的特征。与传统收藏品（例如棒球卡）一样，人们在评估可收藏 NFT 时会考虑稀有性、文化意义和社区。热门类别包括：
-{% endtab %}
 
-{% tab title="undefined" %}
 * **体育**：代表运动队、球员和时刻的收藏品。示例包括[NBA top shots](https://nbatopshot.com/?c=COLLECTORS\&utm\_source=google\&utm\_medium=paid\_search\&utm\_campaign=within\_search\_brand\_exclusionlist\&utm\_term=nba+top+shot\&gclid=Cj0KCQjwqKuKBhCxARIsACf4XuFVSizuNBmh7fH7qEYs1hvCl-TCM9KALrBIfrhXyTVczHeX8SsC7rAaAkaWEALw\_wcB\&gclsrc=aw.ds) （NBA 时刻）和[sorare](https://sorare.com/) （足球运动员）。
 * **生成艺术**：从代码生成的收藏品。例如， [Art Blocks](https://artblocks.io/learn)是由程序员编写的算法生成的。
 * **个人资料图片 (PFP)** ：人们购买的收藏品来代表他们的在线头像并访问 PFP 社区。例子包括[cryptopunks](https://www.larvalabs.com/cryptopunks)和[boredapeyachtclub](https://opensea.io/collection/boredapeyachtclub) 。
 * **徽章**：代表在线社区中特殊访问权限或所有权的收藏品。例子包括[汤姆·布雷迪（Tom Brady）的签名系列](https://autograph.io/details/60fba00ed61cd2000f4723f5/nft)（持有者可以特别获得未来的NFT掉落和私人Discord）。
 * \*\*"乐高积木"：\*\*旨在成为其他东西的积木的收藏品。示例包括[Loot](https://opensea.io/collection/lootproject) ，它具有简单的冒险装备文本列表。人们从 Loot NFT 中创建角色选择屏幕或游戏。
-{% endtab %}
 
-{% tab title="undefined" %}
 **游戏内 NFT**使游戏玩家能够以 NFT 的形式购买和拥有游戏内资产。这是一个具有巨大潜力的新兴领域，因为游戏是迄今为止全球最受欢迎的娱乐类别。 [Axie Infinity](https://axieinfinity.com/)是该领域的领先者。该游戏在菲律宾等发展中国家尤其受欢迎，玩家可以通过购买、繁殖和对抗数字宠物来谋生。
-{% endtab %}
 
-{% tab title="undefined" %}
 **数字房地产**包括代表数字环境中土地的 NFT。随着人们在虚拟世界中花费更多时间，为他们创造互动空间已成为一个有利可图的市场。像[Decentraland](https://decentraland.org/)这样的设置在区块链上出售数字房地产地块，供创作者使用。
-{% endtab %}
 
-{% tab title="undefined" %}
 **音乐NFT**使艺术家更容易为他们的作品提供资金，并使粉丝更容易分享艺术家成功的好处。[Royal](https://royal.io/)是这个领域NFT平台的一个例子。
-{% endtab %}
-{% endtabs %}
 
 以[CryptoPunks](https://www.odysseydao.com/articles/why-buy-nfts#appreciate\_art)为例，官网上说：
 

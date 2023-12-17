@@ -243,7 +243,7 @@
     }
     ```
 
-
+    ```js
     function foo() {
       console.log('foo')
       Promise.resolve().then(
@@ -551,7 +551,7 @@ JavaScript 社区探索并推出了一系列的方案，**从“Promise 加 then
         console.log(id_text)
     ```
 
-
+    ```js
         let new_name_url = name_url + "?id=" + id_text
         console.log(new_name_url)
 
@@ -612,8 +612,6 @@ JavaScript 社区探索并推出了一系列的方案，**从“Promise 加 then
       
             let new_name_url = name_url+"?id="+id_text
             console.log(new_name_url)
-    ```
-
 
             let name_res = await fetch(new_name_url)
             let name_text = await name_res.text()
@@ -1150,7 +1148,7 @@ JavaScript 社区探索并推出了一系列的方案，**从“Promise 加 then
     }
     ```
 
-
+    ```js
     function foo() {
       let i = 0
       let str = 'test V8 GC'
