@@ -184,8 +184,16 @@ Route tables tell the AWS and VPC **how to route** the traffic depending on the 
 
 ## S3
 
+### User Guides
+
+[S3 User Guides](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+
 ## More resources
 
 ### Sam Meech-Ward’s AWS Videos
 
 [Sam Meech-Ward’s AWS Videos](https://www.youtube.com/playlist?list=PL0X6fGhFFNTcU-_MCPe9dkH6sqmgfhy_M)
+
+### Udemy
+
+[Intro to Cloud Computing on AWS for Beginners [2023]](https://www.udemy.com/course/introduction-to-cloud-computing-on-amazon-aws-for-beginners/)
