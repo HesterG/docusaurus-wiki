@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'My Site',
+  title: 'My Wiki',
   tagline: 'My Personal Tech Wiki',
   favicon: 'img/favicon.ico',
 
