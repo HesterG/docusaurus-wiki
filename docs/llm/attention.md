@@ -6,4 +6,4 @@ title: Attention
 
 [paper](https://arxiv.org/abs/1706.03762)
 
-[b站](https://www.bilibili.com/video/BV1pr421t73G)
+[精读](https://www.bilibili.com/video/BV1pu411o7BE)
