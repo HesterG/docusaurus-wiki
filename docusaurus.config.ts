@@ -89,6 +89,12 @@ const config: Config = {
           sidebarId: 'goSidebar',
           label: 'Go',
         },
+        {
+          type: 'docSidebar',
+          position: 'left',
+          sidebarId: 'llmSidebar',
+          label: 'LLM',
+        },
         // {to: '/blog', label: 'Blog', position: 'left'},
         // {
         //   href: 'https://github.com/facebook/docusaurus',
