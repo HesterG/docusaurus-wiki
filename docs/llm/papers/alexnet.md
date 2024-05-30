@@ -71,3 +71,69 @@ AlexNet是一个深度卷积神经网络（CNN），由Alex Krizhevsky、Ilya Su
 - **影响力**：AlexNet的成功激发了更多的研究者使用ImageNet数据集进行深度学习模型的训练和评估，进一步推动了计算机视觉技术的发展。
 
 总结来说，ImageNet是一个用于图像分类的大规模数据集，而AlexNet是一个在ImageNet数据集上取得显著成功的深度卷积神经网络模型。两者的结合展示了深度学习在计算机视觉领域的巨大潜力，并推动了该领域的快速发展。
+
+## Validation vs. Test Set
+
+### Validation Set
+
+#### Purpose
+
+- **Model Tuning**: The validation set is used during the training process to tune hyperparameters and select the best model architecture.
+- **Performance Monitoring**: It helps monitor the model's performance on unseen data during training to detect issues like overfitting.
+
+#### Usage
+
+- **During Training**: The validation set is used iteratively during the model training phase. After each training iteration (epoch), the model's performance is evaluated on the validation set to guide adjustments in hyperparameters or model parameters.
+- **Hyperparameter Tuning**: It helps in selecting the best hyperparameters (e.g., learning rate, batch size, number of layers) by evaluating different configurations on the validation set.
+
+#### Data Leakage
+
+- **Not Used for Final Evaluation**: To avoid data leakage and ensure an unbiased evaluation, the validation set should not be used for the final model evaluation.
+
+### Test Set
+
+#### Purpose
+
+- **Final Evaluation**: The test set is used to provide an unbiased evaluation of the final model. It assesses the model's performance on completely unseen data.
+- **Generalization Assessment**: It helps determine how well the model generalizes to new, real-world data.
+
+#### Usage
+
+- **After Training**: The test set is only used once, after the model has been fully trained and all hyperparameters have been tuned. It is not involved in the training process or hyperparameter tuning.
+- **Performance Metrics**: The final performance metrics (e.g., accuracy, F1-score, precision, recall) reported for the model are derived from its performance on the test set.
+
+#### Data Leakage
+
+- **Strict Separation**: The test set must be kept strictly separate from both the training and validation sets to ensure an unbiased evaluation of the model's performance.
+
+### Key Differences
+
+1. **Purpose**:
+
+   - **Validation Set**: Used for tuning the model and hyperparameters during the training phase.
+   - **Test Set**: Used for evaluating the final model's performance after training is complete.
+
+2. **Usage Timing**:
+
+   - **Validation Set**: Used repeatedly during the training process.
+   - **Test Set**: Used only once after the training process is fully completed.
+
+3. **Impact on Model**:
+
+   - **Validation Set**: Influences model adjustments and hyperparameter tuning.
+   - **Test Set**: Does not influence the model; purely for final performance assessment.
+
+4. **Data Leakage**:
+
+   - **Validation Set**: Should not be used for final model evaluation to prevent bias.
+   - **Test Set**: Must be kept separate from training and validation data to ensure an unbiased evaluation.
+
+### Practical Data Splitting
+
+In practice, datasets are often split into three parts:
+
+- **Training Set**: Typically 60-80% of the total data, used to train the model.
+- **Validation Set**: Typically 10-20% of the total data, used for model tuning and validation during training.
+- **Test Set**: Typically 10-20% of the total data, used for the final evaluation of the model.
+
+This splitting strategy helps in developing robust models and ensures that the final performance metrics are representative of how the model will perform on new, unseen data.
