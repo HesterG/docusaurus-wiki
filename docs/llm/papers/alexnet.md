@@ -32,8 +32,8 @@ AlexNet是一个深度卷积神经网络（CNN），由Alex Krizhevsky、Ilya Su
 
 - **层次**：AlexNet包含八个学习层：五个卷积层和三个全连接层。
 - **激活函数**：使用ReLU（Rectified Linear Units）作为激活函数，显著加快了训练速度。
-- **Dropout**：在全连接层使用Dropout技术，防止过拟合。
-- **数据增强**：使用数据增强技术（如随机裁剪和翻转）来增加训练数据的多样性。
+- **Data Augmentation**：随机裁剪、PCA，减少过拟合。
+- **Dropout**：在全连接层使用Dropout技术，减少过拟合。
 - **GPU加速**：利用GPU进行并行计算，极大地提高了训练效率。
 
 #### 主要贡献
