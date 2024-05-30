@@ -3,8 +3,6 @@ sidebar_position: 1
 title: Intro
 ---
 
-Notes Following https://github.com/luban-agi/Awesome-AIGC-Tutorials
+Notes Following: [Awesome-AIGC-Tutorials](https://github.com/luban-agi/Awesome-AIGC-Tutorials)
 
-## Paper Reading
-
-[github](https://github.com/mli/paper-reading)
+Paper Reading: [paper-reading](https://github.com/mli/paper-reading)、[AI论文精读](https://www.bilibili.com/video/BV1ih411J7Kz)
