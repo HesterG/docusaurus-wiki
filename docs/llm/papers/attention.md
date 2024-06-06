@@ -1,4 +1,7 @@
-# Attention Is All You Need
+---
+sidebar_position: 2
+title: Attention Is All You Need
+---
 
 [original paper](https://arxiv.org/abs/1706.03762)
 
