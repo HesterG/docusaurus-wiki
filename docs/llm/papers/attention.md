@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: Attention Is All You Need
 ---
 
@@ -24,4 +24,4 @@ decoder:  Given z, the decoder then generates an output sequence `(y_1, ..., y_m
 
 encoder可以一次看到全部的句子 `(x_1, ..., x_n)` , 但是decoder一次只能看到一个, `auto-regressive`输入又是你的输出，比如 `y_1` 会是 `y_2` 的输入
 
-![](https://res.cloudinary.com/diuxkoxa8/image/upload/v1716615233/Screen_Shot_2024-05-25_at_1.28.22_PM_yznyz5.png)
+![img](https://res.cloudinary.com/diuxkoxa8/image/upload/v1716615233/Screen_Shot_2024-05-25_at_1.28.22_PM_yznyz5.png)
