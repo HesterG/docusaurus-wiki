@@ -5,6 +5,8 @@ title: CNN、VGG、ResNet
 
 [tut video](https://www.bilibili.com/video/BV1zF411V7xu)
 
+![Imgur](https://imgur.com/fkad43O.png)
+
 ## CNN vs 传统神经网络
 
 | **Feature**                        | **Convolutional Neural Network (CNN)**                       | **Traditional Neural Network (MLP)**                         |
@@ -28,7 +30,6 @@ title: CNN、VGG、ResNet
 由于全连接层参数不能为3维，需要把处理过后的特征图拉成一个特征向量，将该向量转化为5分类的概率值。
 
 带参数计算才能称作层（卷积层和全连接层）。
-
 
 ## 卷积层 (Convolutional Layer)
 

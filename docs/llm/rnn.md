@@ -3,8 +3,6 @@ sidebar_position: 3
 title: RNN、Word Embedding Model
 ---
 
-[tut video](https://www.bilibili.com/video/BV1oj41177ir?p=26)
-
 ## RNN
 
 循环神经网络（Recurrent Neural Network，RNN）是一种用于处理序列数据的神经网络。RNN在自然语言处理、时间序列预测等任务中非常有效，因为它们能够捕捉输入数据的时间依赖性。
