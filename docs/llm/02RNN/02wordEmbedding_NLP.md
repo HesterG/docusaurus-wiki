@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: 4.2 word embedding & NLP
+title: 4.2 Word Embedding & NLP
 ---
 
 学习目标
