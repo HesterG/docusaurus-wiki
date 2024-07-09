@@ -61,13 +61,14 @@ RNN在许多应用中得到了广泛应用，包括但不限于：
 RNN（循环神经网络）和词向量模型（Word Embedding Model）是自然语言处理（NLP）中的两个关键组件，它们在处理和理解文本数据时紧密关联，常常结合使用。以下是它们的关系和结合使用的方式：
 
 ### 词向量模型（Word Embedding Model）
+
 词向量模型是一种将词语映射到高维连续向量空间中的技术，使得具有相似语义的词在向量空间中更接近。常见的词向量模型包括：
 
 #### Word2Vec
 
 通过CBOW（Continuous Bag of Words）和Skip-gram两种方式训练词向量。
 
-**CBOW（Continuous Bag of Words）**
+**CBOW（Continuous Bag of Words**
 
 - 通过上下文词（context words）来预测中心词（target word）。它将上下文中的所有词向量平均（或求和）起来，然后用这个平均向量来预测中心词。
 
@@ -95,20 +96,20 @@ Negative Sampling是一种在训练Word2Vec模型时用于<u>优化计算效率�
 RNN是一种处理序列数据的神经网络，能够捕捉输入数据的时间依赖性。RNN在处理文本序列时，通常需要将输入的词语表示成向量形式，因此需要词向量模型的辅助。
 
 1. **输入表示**：
-   
+
    在使用RNN处理文本数据时，首先需要将文本中的每个词转换为词向量。这个转换过程通常由预训练的词向量模型（如Word2Vec或GloVe）完成。
 
    例如，句子"Hello world"会被转换成两个向量$v_{Hello}, v_{world}$。
-   
+
 2. **序列处理**：
-   
+
    这些词向量作为RNN的输入，RNN会依次处理每个词向量，并根据前一步的隐状态更新当前的隐状态，从而捕捉序列中的上下文信息。
-   
    RNN的输出可以用于各种下游任务，如文本分类、序列生成、语言翻译等。
 
 ### 示例流程
 
 1. **文本预处理**：将文本分词，并将每个词映射为词向量。
+
    ```python
    from gensim.models import Word2Vec
    
@@ -120,7 +121,7 @@ RNN是一种处理序列数据的神经网络，能够捕捉输入数据的时�
    ```
 
 2. **RNN处理**：将词向量输入RNN进行序列处理。
-   
+
    ```python
    import torch
    import torch.nn as nn
@@ -143,4 +144,3 @@ RNN是一种处理序列数据的神经网络，能够捕捉输入数据的时�
    rnn_model = SimpleRNN(input_size=word_vectors[0].shape[0], hidden_size=128, output_size=10)
    output = rnn_model(input_tensor)
    ```
-
