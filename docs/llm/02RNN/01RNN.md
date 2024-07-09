@@ -540,7 +540,7 @@ def rnn_backward(ds, caches):
 
 #### 4.1.4.2 直观理解
 
-```
+```python
 The cat,which already ate,…….,was full.
 ```
 

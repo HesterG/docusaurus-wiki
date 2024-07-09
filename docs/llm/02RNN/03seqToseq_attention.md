@@ -277,6 +277,7 @@ def train(self, X_onehot, Y_onehot):
 ```
 
 （1）定义网络好的输入到输出流程
+
 - 步骤1、定义模型的输入
 - 步骤2：使用encoder的双向LSTM结构得输出a
 - 步骤3：循环decoder的Ty次序列输入，获取decoder最后输出
@@ -555,7 +556,6 @@ def test(self):
 翻译2-Jane is going to be visiting Africa in September.
 ```
 
-
 翻译1显然比翻译2要更好，更加简洁的表达了意思。
 
 如果该算法挑选了$y^{1},y^{2}$​, ('Jane' , 'is')，那么在英语中"is going"更加常见，因此在选择 $y^{3}$ ='going'，于是对于合适的句法来说"**Jane is visiting**"相比"**Jane is going**"会有更高的概率使用，所以有时候真正需要的是一次性挑选整个单词序列$y^{1},y^{2},y^{3},...,y^{t}$ 使得整体的条件概率最大。
@@ -640,7 +640,6 @@ n-gram下的可以衡量翻译的流程性，当我们对不同尺度的词进�
   候选翻译：  the  cat
   参考翻译：  the  cat  is  on  the  mat  
   参考翻译：  there  is  a  cat  on  the  mat
-
 
 这样就很容易的高分，所以就需要一个有效的乘惩罚机制。我们设c为候选翻译，r为参考翻译。则有下面的公式
 
