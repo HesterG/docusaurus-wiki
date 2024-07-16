@@ -647,7 +647,7 @@ $BP=\lbrace^{1,ifc>r}_{e^{1-\frac{r}{c}},ifc \leq r}$
 
 ##### 4、最终BLEU值得计算公式
 
-$BLEU=BP*exp(\sum_{n=1}^{N}w_{n}*log^{p_{n}})$
+$BLEU = BP*exp(\sum_{n=1}^{N}w_{n}*log^{p_{n}})$
 
 ### 4.3.6 总结
 
