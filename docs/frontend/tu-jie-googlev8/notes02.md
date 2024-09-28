@@ -1,7 +1,5 @@
 # 笔记2
 
-
-
 [链接](https://time.geekbang.org/column/article/211682)
 
 ## [运行时环境：运行JavaScript代码的基石](https://time.geekbang.org/column/article/219066)
