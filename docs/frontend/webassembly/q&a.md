@@ -4,7 +4,7 @@
 
 **A**: 你不能直接在 JavaScript 中导入 WAT（WebAssembly Text Format），但可以将 WAT 转换为 Wasm（WebAssembly 的二进制格式），然后在 JavaScript 中导入并运行。
 
-### 实现步骤：
+### 实现步骤
 
 1. **将 WAT 转换为 Wasm**:
 
