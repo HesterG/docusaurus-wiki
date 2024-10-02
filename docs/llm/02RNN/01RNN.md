@@ -527,8 +527,6 @@ def rnn_backward(ds, caches):
 
 ### 4.1.4 GRU(门控循环单元)
 
-2014年，
-
 #### 4.1.4.1 什么是GRU
 
 ![](https://imgur.com/TCdIVG4.png)
@@ -552,7 +550,7 @@ The cat,which already ate,…….,was full.
 
 ![](https://imgur.com/AwGjNTV.png)
 
-- **为了解决短期记忆问题，每个递归单元能够自适应捕捉不同尺度的依赖关系**
+- 为了解决**短期记忆问题**，每个递归单元能够自适应捕捉不同尺度的依赖关系
 - 解决梯度消失的问题，在隐层输出的地方$h_t, h_{t-1}$的关系用加法而不是RNN当中乘法+激活函数
 
 ### 4.1.5 LSTM(长短记忆网络)
