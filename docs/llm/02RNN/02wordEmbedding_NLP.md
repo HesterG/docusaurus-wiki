@@ -1,12 +1,14 @@
 ---
 sidebar_position: 2
-title: 4.2 Word Embedding & NLP
+title: 2. Word Embedding & NLP
 ---
 
 学习目标
 
 - 了解词嵌入的优势
 - 掌握词嵌入的训练gensim库的使用
+
+### 2.1 one hot
 
 #### 在RNN中词使用one_hot表示的问题
 
@@ -18,7 +20,7 @@ title: 4.2 Word Embedding & NLP
 
   例如Apple与Orange会更近一些，Man与Woman会近一些，取任意两个向量计算内积都为0
 
-### 4.2.2 词嵌入
+### 2.2 词嵌入
 
 定义：指把一个维数为所有词的数量的高维空间**嵌入到一个维数低得多的连续向量空间中**，每个单词或词组被映射为实数域上的向量。
 
@@ -28,19 +30,14 @@ title: 4.2 Word Embedding & NLP
 
 ![](https://imgur.com/NVZHSwI.png)
 
-#### 4.2.2.1 特点
+#### 2.2.1 特点
 
-- 能够体现出词与词之间的关系
+- 能够体现出词与词之间的关系，比如说我们用`Man - Woman`,或者`Apple - Orange`，都能得到一个向量
+- 能够得到相似词，例如`Man - Woman = King - ?` -> `? = Queen`
 
-  - 比如说我们用Man - Woman,或者Apple - Orange，都能得到一个向量
+  ![](https://imgur.com/gFjh2Uq.png)
 
-- 能够得到相似词，例如Man - Woman = King - ?
-
-  - ? = Queen
-
-![](https://imgur.com/gFjh2Uq.png)
-
-#### 4.2.2.3 算法类别
+#### 2.2.3 算法类别
 
 Bengio等人在一系列论文中使用了神经概率语言模型使机器“习得词语的分布式表示。
 
@@ -55,22 +52,21 @@ Bengio等人在一系列论文中使用了神经概率语言模型使机器“�
 pip install gensim
 ```
 
-### 4.2.3 Word2Vec案例
+### 2.3 Word2Vec案例
 
-#### 4.2.3.1 训练语料
+#### 2.3.1 训练语料
 
 由于语料比较大，就提供了一个[下载地址](http://www.sogou.com/labs/resource/cs.php)
 
 - 搜狗新闻中文语料(2.7G)
 - 做中文分词处理之后的结果
 
-#### 4.2.3.2 步骤
+#### 2.3.2 步骤
 
 1. 训练模型
-  
 2. 测试模型结果
   
-#### 4.2.3.3 代码
+#### 2.3.3 代码
 
 - 训练模型API
 
@@ -138,6 +134,6 @@ pip install gensim
     Out: [('妻子', 0.7788498997688293)]
   ```
 
-### 4.2.4 总结
+### 2.4 总结
 
 掌握gensim库的词向量训练和使用
