@@ -3,8 +3,6 @@ sidebar_position: 1
 title: AlexNet
 ---
 
-[Original Paper](https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)
-
 ## Q: ImageNet是什么，跟AlexNet的关联是什么
 
 ImageNet是一个大规模的视觉数据库，用于视觉目标识别软件研究。它与AlexNet的关联主要体现在ImageNet是AlexNet训练和测试的基础数据集，而AlexNet在ImageNet竞赛中取得了显著的成果，从而推动了深度学习在计算机视觉领域的发展。下面是对ImageNet和AlexNet的详细介绍。
@@ -24,7 +22,6 @@ ImageNet是一个图像数据库，包含超过1500万张高分辨率图像，�
 #### 重要性
 
 ImageNet的规模和标注质量使其成为深度学习和计算机视觉研究的标准数据集。许多新的模型和算法都是在ImageNet上进行测试和评估的。
-
 
 ### AlexNet
 
@@ -205,3 +202,7 @@ In practice, datasets are often split into three parts:
 - **Test Set**: Typically 10-20% of the total data, used for the final evaluation of the model.
 
 This splitting strategy helps in developing robust models and ensures that the final performance metrics are representative of how the model will perform on new, unseen data.
+
+## References
+
+[Original Paper](https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)
