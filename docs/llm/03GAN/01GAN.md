@@ -90,10 +90,10 @@ G、D结构是两个网络，特点是能够反向传播可导计算要介绍G�
   
   改进：
   
-  1. 判别器D中取出pooling，全部变成卷积、生成器G中使用反卷积（下图）
+  1. 判别器D中去除pooling，全部变成卷积、生成器G中使用反卷积（下图）
   2. D、G中都增加了BN层
   3. 去除了所有的全连接层
-  4. 判别器D中全部使用Leaky ReLU，生成器除了最后输出层使用tanh其它层全换成ReLU
+  4. 判别器D中**全部使用Leaky ReLU**，生成器除了最后输出层使用tanh其它层全换成ReLU
 
 ![](https://imgur.com/iPXd9m9.png)
 
@@ -144,8 +144,8 @@ G、D结构是两个网络，特点是能够反向传播可导计算要介绍G�
 
   - 建立D判别器CNN结构，初始化判别器训练优化参数
   - 联合建立G生成器CNN结构，初始化生成器训练优化参数
-    - 输入噪点数据，输出预测的类别概率
-    - 注意生成器训练时，判别器不进行训练
+    
+    输入噪点数据，输出预测的类别概率; 注意生成器训练时，判别器不进行训练
 
     ```python
     from keras.optimizers import Adam
@@ -182,8 +182,12 @@ G、D结构是两个网络，特点是能够反向传播可导计算要介绍G�
 - 定义模型的判别器
 
     ```python
-    from keras.layers import Input, Dense, Reshape, Flatten, Dropout from keras.layers import BatchNormalization, Activation, ZeroPadding2D from keras.layers.advanced\_activations import LeakyReLU from keras.layers.convolutional import UpSampling2D, Conv2D from keras.models import Sequential, Model
-
+    from keras.layers import Input, Dense, Reshape, Flatten, Dropout 
+    from keras.layers import BatchNormalization, Activation, ZeroPadding2D 
+    from keras.layers.advanced\_activations import LeakyReLU 
+    from keras.layers.convolutional import UpSampling2D, Conv2D 
+    from keras.models import Sequential, Model
+    
       def build_discriminator(self):
     
         model = Sequential()
