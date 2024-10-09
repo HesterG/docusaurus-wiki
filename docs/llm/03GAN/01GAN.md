@@ -33,20 +33,26 @@ GAN是非监督式学习的一种方法，在2014年被提出。主要用途: �
 
   ![](https://imgur.com/L1OQbmp.png)
 
-  - 黑色虚线：真是样本的分布
+  - 黑色虚线：真实样本的分布
   - 绿色实线：生成样本的分布
   - 蓝色虚线：判别器判断的概率分布
-  - zzz表示噪声，zzz到xxx表示生成器生成的分布映射
+  - $z$表示噪声，$z$到$x$表示生成器生成的分布映射
 
 - 过程分析：
 
   1. 定义GAN结构生成数据
-    (a)状态处于最初始的状态，生成器生成的分布和真实分布区别较大，并且判别器判别出样本的概率不稳定
-  2. 在真实数据上训练 n epochs判别器，产生fake(假数据)并训练判别器识别为假
-    通过多次训练判别器来达到(b)样本状态，此时判别样本区分得非常显著
+  
+       (a)状态处于最初始的状态，生成器生成的分布和真实分布区别较大，并且判别器判别出样本的概率不稳定
+  
+  2. 在真实数据上训练n epochs判别器，产生fake(假数据)并训练判别器识别为假
+  
+       通过**多次训练判别器**来达到(b)样本状态，此时判别样本区分得非常显著
+  
   3. 训练生成器达到欺骗判别器的效果
-    训练生成器之后达到(c)样本状态，此时生成器分布相比之前，逼近了真实样本分布。经过多次反复训练迭代之后。
-    最终希望能够达到(d)状态，生成样本分布拟合于真实样本分布，并且判别器分辨不出样本是生成的还是真实的。
+  
+       **训练生成器**之后达到(c)样本状态，此时生成器分布相比之前，逼近了真实样本分布。经过多次反复训练迭代之后。
+  
+       最终希望能够达到(d)状态，生成样本分布拟合于真实样本分布，并且判别器分辨不出样本是生成的还是真实的。
 
 #### 1.2.3 训练损失
 
@@ -81,7 +87,9 @@ G、D结构是两个网络，特点是能够反向传播可导计算要介绍G�
   - 缺点：实践证明训练难度大，效果不行
 
 - 2015：使用卷积神经网络+GAN（DCGAN（Deep Convolutional GAN））
-  - 改进：
+  
+  改进：
+  
   1. 判别器D中取出pooling，全部变成卷积、生成器G中使用反卷积（下图）
   2. D、G中都增加了BN层
   3. 去除了所有的全连接层
@@ -109,10 +117,10 @@ G、D结构是两个网络，特点是能够反向传播可导计算要介绍G�
 #### 1.3.2 代码步骤流程
 
 - 初始化GAN模型结构
-  - init\_model(self)
+  - `init_model(self)`
   - 判别器：CNN，build\_discriminator
   - 生成器：CNN，build\_generator
-- 训练过程:train(self, epochs, batch\_size=128, save\_interval=50)
+- 训练过程: `train(self, epochs, batch_size=128, save_interval=50)`
   - 训练判别器
   - 训练生成器
   - 生成图片保存
@@ -141,31 +149,31 @@ G、D结构是两个网络，特点是能够反向传播可导计算要介绍G�
 
     ```python
     from keras.optimizers import Adam
-
+    
     def init_model(self):
-
+    
       # 生成原始噪点数据大小
       self.latent_dim = 100
-
+    
       optimizer = Adam(0.0002, 0.5)
-
+    
       # 1、建立判别器训练参数
       # 选择损失，优化器，以及衡量准确率
       self.discriminator = self.build_discriminator()
       self.discriminator.compile(loss='binary_crossentropy',
                       optimizer=optimizer,
                       metrics=['accuracy'])
-
+    
       # 2、联合建立生成器训练参数，指定生成器损失
       self.generator = self.build_generator()
-
+    
       z = Input(shape=(self.latent_dim,))
       img = self.generator(z)
-
+    
       # 合并模型的损失，并且之后只训练生成器，判别器不训练
       self.discriminator.trainable = False
       valid = self.discriminator(img)
-
+    
       # 训练生成器欺骗判别器
       self.combined = Model(z, valid)
       self.combined.compile(loss='binary_crossentropy', optimizer=optimizer)
@@ -212,9 +220,9 @@ G、D结构是两个网络，特点是能够反向传播可导计算要介绍G�
   ```python
   # CNN结构
   def build_generator(self):
-
+  
     model = Sequential()
-
+  
     model.add(Dense(128 * 7 * 7, activation="relu", input_dim=self.latent_dim))
     model.add(Reshape((7, 7, 128)))
     model.add(UpSampling2D())
@@ -227,12 +235,12 @@ G、D结构是两个网络，特点是能够反向传播可导计算要介绍G�
     model.add(Activation("relu"))
     model.add(Conv2D(self.channels, kernel_size=3, padding="same"))
     model.add(Activation("tanh"))
-
+  
     model.summary()
-
+  
     noise = Input(shape=(self.latent_dim,))
     img = model(noise)
-
+  
     return Model(noise, img)
   ```
 
@@ -242,45 +250,45 @@ G、D结构是两个网络，特点是能够反向传播可导计算要介绍G�
     from keras.datasets import mnist
     import matplotlib.pyplot as plt
     import numpy as np
-
+    
     def train(self, epochs, batch_size=32):
-  
+      
       # 加载手写数字
       (X_train, _), (_, _) = mnist.load_data()
-  
+      
       # 进行归一化
       X_train = X_train / 127.5 - 1.
       X_train = np.expand_dims(X_train, axis=3)
-  
+      
       # 正负样本的目标值建立
       valid = np.ones((batch_size, 1))
       fake = np.zeros((batch_size, 1))
-  
+      
       for epoch in range(epochs):
-  
+      
         # 1、训练判别器
         # 选择随机的一些真实样本
         idx = np.random.randint(0, X_train.shape[0], batch_size)
         imgs = X_train[idx]
-  
+      
         # 生成器产生假样本
         noise = np.random.normal(0, 1, (batch_size, self.latent_dim))
         gen_imgs = self.generator.predict(noise)
-  
+      
         # 训练判别器过程
         d_loss_real = self.discriminator.train_on_batch(imgs, valid)
         d_loss_fake = self.discriminator.train_on_batch(gen_imgs, fake)
         # 计算平均两部分损失
         d_loss = np.add(d_loss_real, d_loss_fake) / 2
-  
+      
         # 2、训练生成器，停止判别器
         #  合并训练，并停止训练判别器
         # 用目标值为1去训练，目的使得生成器生成的样本越来越接近真是样本
         g_loss = self.combined.train_on_batch(noise, valid)
-  
+      
         # 画出结果
         print("迭代次数:%d [D 损失: %f, 准确率: %.2f%], [G 损失: %f]" % (epoch, d_loss[0], 100 * d_loss[1], g_loss))
-  
+      
         # 保存生成的图片
         if epoch % 50 == 0:
           self.save_imgs(epoch)
@@ -288,25 +296,27 @@ G、D结构是两个网络，特点是能够反向传播可导计算要介绍G�
 
 4. 保存生成的图片
 
-  ```python
-  def save_imgs(self, epoch):
-    r, c = 5, 5
-    noise = np.random.normal(0, 1, (r * c, self.latent_dim))
-    gen_imgs = self.generator.predict(noise)
+    ```python
+    def save_imgs(self, epoch):
+      r, c = 5, 5
+      noise = np.random.normal(0, 1, (r * c, self.latent_dim))
+      gen_imgs = self.generator.predict(noise)
+    
+      # Rescale images 0 - 1
+      gen_imgs = 0.5 * gen_imgs + 0.5
+    
+      fig, axs = plt.subplots(r, c)
+      cnt = 0
+      for i in range(r):
+        for j in range(c):
+          axs[i, j].imshow(gen_imgs[cnt, :, :, 0], cmap='gray')
+          axs[i, j].axis('off')
+          cnt += 1
+      fig.savefig("./images/mnist_%d.png" % epoch)
+      plt.close()
+    ```
 
-    # Rescale images 0 - 1
-    gen_imgs = 0.5 * gen_imgs + 0.5
-
-    fig, axs = plt.subplots(r, c)
-    cnt = 0
-    for i in range(r):
-      for j in range(c):
-        axs[i, j].imshow(gen_imgs[cnt, :, :, 0], cmap='gray')
-        axs[i, j].axis('off')
-        cnt += 1
-    fig.savefig("./images/mnist_%d.png" % epoch)
-    plt.close()
-  ```
+    
 
 ### 1.4 总结
 
